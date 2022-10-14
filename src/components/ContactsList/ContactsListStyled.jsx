@@ -10,7 +10,7 @@ export const Title = styled.h2`
 export const Button = styled.button`
   margin-left: 20px;
   width: 120px;
-  height: 35px;
+  height: 34px;
   color: #fff;
   border-radius: 5px;
   padding: 8px 14px;
