@@ -1,16 +1,17 @@
 import React from "react"
+import { Button, List, ListItem } from './ContactListStyled';
 
 export function ContactList({ data, deleteFromContacts }) {
   const items = data.map(({ name, number, id }) => {
     return (
-      <li key={id}>
+      <ListItem key={id}>
         Name: {name} Number: {number}
-        <button type="button" onClick={() => deleteFromContacts(name)}>
+        <Button type="button" onClick={() => deleteFromContacts(name)}>
           Delete
-        </button>
-      </li>
+        </Button>
+      </ListItem>
     );
   });
-  return <ul>{items}</ul>;
+  return <List>{items}</List>;
 }
 

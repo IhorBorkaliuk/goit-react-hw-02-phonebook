@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { Form } from "./Form/Form";
 import { ContactList } from './ContactsList/ContactsList';
 import { Filter } from "./Filter/Filter";
+import { Title } from "./ContactsList/ContactListStyled";
 
 export class App extends Component {
   state = {
@@ -63,9 +64,9 @@ export class App extends Component {
     const { filter } = this.state;
     return (
       <div>
-        <h1>Phonebook</h1>
+        <Title>Phonebook</Title>
         <Form onSubmit={addContact} />
-        <h2>Contacts</h2>
+        <Title>Contacts</Title>
         <ContactList
           data={this.onFilter()}
           deleteFromContacts={deleteFromContacts}
