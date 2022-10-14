@@ -14,7 +14,7 @@ export const Button = styled.button`
   height: 35px;
   color: #fff;
   border-radius: 5px;
-  padding: 8px 15px;
+  padding: 8px 14px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
   background: rgb(105, 105, 111);
