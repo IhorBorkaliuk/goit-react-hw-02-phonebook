@@ -14,7 +14,7 @@ export class Form extends Component {
   };
   handleSubmit = evt => {
     evt.preventDefault();
-    const { name, number } = this.state;
+    // const { name, number } = this.state;
     this.props.onSubmit({ ...this.state });
     this.reset();
   };
