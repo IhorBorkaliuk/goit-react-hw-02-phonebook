@@ -9,7 +9,7 @@ export const FormStyled = styled.form`
 
 export const Text = styled.p`
 font-size: 20px;
-margin-right: 15px;
+margin-right: 14px;
 `;
 
 export const Label = styled.label`
