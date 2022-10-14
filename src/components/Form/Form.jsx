@@ -1,11 +1,24 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+<<<<<<< HEAD
 import { Button } from 'components/ContactsList/ContactsListStyled';
 import { FormStyled, Text, Label, Input } from './FormStyled';
 
 
 export class Form extends Component {
   state = { name: '', number: '' };
+=======
+import { Button } from 'components/ContactsList/ContactListStyled';
+import { FormStyled, Text, Label, Input } from './FormStyled';
+
+const INITIAL_STATE = {
+  name: '',
+  number: '',
+};
+
+export class Form extends Component {
+  state = { ...INITIAL_STATE };
+>>>>>>> 208b35d538c69678c0ef148a2444ea1d656cf742
   IDName = nanoid();
   IDnumber = nanoid();
   handleChange = evt => {
