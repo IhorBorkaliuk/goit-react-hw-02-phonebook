@@ -2,23 +2,22 @@ import styled from 'styled-components';
 
 export const FormStyled = styled.form`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
 `;
 
 export const Text = styled.p`
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 14px;
+  font-weight: 500;
 `;
 
 export const Label = styled.label`
-  width: 30%;
+  width: 20%;
 `;
 
 export const Input = styled.input`
-  width: 100%;
+  width: 60%;
 `;
 
-export const InputFilter = styled.input`
-  width: 30%;
-`;
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, List, ListItem } from './ContactsListStyled';
 
 export function ContactList({ data, deleteFromContacts }) {
@@ -14,3 +15,15 @@ export function ContactList({ data, deleteFromContacts }) {
   });
   return <List>{items}</List>;
 }
+
+
+ContactList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+};
+

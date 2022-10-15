@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
-import { Label, InputFilter } from 'components/Form/FormStyled';
+import { LabelFilter, InputFilter, Wrapper } from './FilterStyled';
+
 
 export const Filter = ({ handleChange, value }) => {
   return (
-    <Label>
-      Find contacts by name
-      <InputFilter type="text" value={value} onChange={handleChange} />
-    </Label>
+    <Wrapper>
+      <LabelFilter>
+        Find contacts by name
+        <InputFilter type="text" value={value} onChange={handleChange} />
+      </LabelFilter>
+    </Wrapper>
   );
 };
 

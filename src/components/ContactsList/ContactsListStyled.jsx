@@ -8,7 +8,7 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled.button`
-  margin-left: 20px;
+  margin-left: 25px;
   width: 120px;
   height: 34px;
   color: #fff;
@@ -34,9 +34,13 @@ export const Button = styled.button`
 `;
 
 export const List = styled.ul`
+display: block;
+  text-align: center;
   list-style-type: none;
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
 `;
