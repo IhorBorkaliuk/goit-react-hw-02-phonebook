@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Button } from 'components/ContactsList/ContactsListStyled';
+import { ButtonForm } from './FormStyled';
 import { FormStyled, Text, Label, Input } from './FormStyled';
 
 
@@ -53,7 +53,7 @@ export class Form extends Component {
           />
         </Label>
 
-        <Button type="submit">Add contact</Button>
+        <ButtonForm type="submit">Add contact</ButtonForm>
       </FormStyled>
     );
   }

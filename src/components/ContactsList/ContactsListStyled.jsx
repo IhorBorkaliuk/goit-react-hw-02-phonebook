@@ -8,7 +8,7 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled.button`
-  margin-left: 25px;
+  margin-left: 15px;
   width: 120px;
   height: 34px;
   color: #fff;

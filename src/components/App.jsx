@@ -1,10 +1,13 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 
 import { Form } from './Form/Form';
 import { ContactList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
 import { Title } from './ContactsList/ContactsListStyled';
+
+
 
 const commonContacts = [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -21,7 +24,7 @@ export class App extends Component {
 
   addContact = contact => {
     this.hasAlreadyAdded(contact)
-      ? alert(`${contact.name} is already in contacts`)
+      ? Notiflix.Notify.info(`${contact.name} is already in contacts`)
       : this.setState(prev => {
           const newContact = {
             id: nanoid(),
@@ -36,14 +39,14 @@ export class App extends Component {
   hasAlreadyAdded = ({ name }) =>
     this.state.contacts.find(el => el.name === name);
 
-  handleChange = ({ target }) => {
-    this.setState({ filter: target.value });
+  handleChange = e => {
+    this.setState({ filter: e.currentTarget.value });
   };
 
   onFilter = () => {
     const { contacts, filter } = this.state;
 
-    if (!filter) return [...contacts];
+    if (!filter) return contacts;
 
     const filterToLowerCase = filter.toLowerCase();
 
@@ -77,3 +80,10 @@ export class App extends Component {
     );
   }
 }
+
+
+Notiflix.Notify.init({
+  position: 'center-top',
+  timeout: 2000,
+  clickToClose: true,
+});
