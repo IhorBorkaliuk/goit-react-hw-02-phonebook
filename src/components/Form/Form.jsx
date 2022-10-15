@@ -14,12 +14,12 @@ export class Form extends Component {
   };
   handleSubmit = evt => {
     evt.preventDefault();
-    this.props.onSubmit({ ...this.state });
+    this.props.onSubmit(this.state );
     this.reset();
   };
 
   reset = () => {
-    this.setState({ ...this.state });
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -28,7 +28,7 @@ export class Form extends Component {
         <Label>
           <Text>Name</Text>
           <Input
-            id={this.nameId}
+            id={this.IDName}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
