@@ -8,17 +8,9 @@ import { Filter } from './Filter/Filter';
 import { Title } from './ContactsList/ContactsListStyled';
 
 
-
-const commonContacts = [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ]
-
 export class App extends Component {
   state = {
-    contacts: commonContacts,
+    contacts: [],
     filter: '',
   };
 
@@ -37,7 +29,9 @@ export class App extends Component {
   };
 
   hasAlreadyAdded = ({ name }) =>
-    this.state.contacts.find(el => el.name === name);
+    this.state.contacts.find(
+      el => el.name.toLowerCase() === name.toLowerCase()
+    );
 
   handleChange = e => {
     this.setState({ filter: e.currentTarget.value });
@@ -45,8 +39,6 @@ export class App extends Component {
 
   onFilter = () => {
     const { contacts, filter } = this.state;
-
-    if (!filter) return contacts;
 
     const filterToLowerCase = filter.toLowerCase();
 
@@ -70,12 +62,18 @@ export class App extends Component {
       <div>
         <Title>Phonebook</Title>
         <Form onSubmit={addContact} />
-        <Title>Contacts</Title>
-        <ContactList
-          data={this.onFilter()}
-          deleteFromContacts={deleteFromContacts}
-        />
-        <Filter handleChange={handleChange} value={filter} />
+        {this.state.contacts.length >= 1 ? (
+          <>
+            <Title>Contacts</Title>
+            <ContactList
+              data={this.onFilter()}
+              deleteFromContacts={deleteFromContacts}
+            />
+            <Filter handleChange={handleChange} value={filter} />
+          </>
+        ) : (
+          ''
+        )}
       </div>
     );
   }
